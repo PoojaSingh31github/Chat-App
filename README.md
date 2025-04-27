@@ -65,23 +65,20 @@ package.json
 ```
 
 ## Features
-- **User Authentication:** Sign up, Login, Logout with secure JWT tokens.
-- **Real-time Messaging:** Instant one-to-one messaging with Socket.io.
-- **Responsive UI:** Mobile and desktop-friendly design.
-- **Chat Notifications:** Live incoming message notifications.
-- **Authentication Middleware:** Secure routes using JWT.
-- **MongoDB Integration:** Persistent user and chat storage.
-- **Protected Routes:** Frontend route protection based on auth state.
-
----
-
-## Design Decisions & Assumptions
-- Used **Socket.io** for real-time communication.
-- **MongoDB** as the database for scalability.
-- Authentication handled via **JWT tokens**.
-- **React Context API** for global state management (user info).
-- Application is **mobile responsive** for better UX.
-- Only one-to-one private chat feature implemented (Group chat can be added in future).
+- **User Authentication:** Secure sign-up, login, and logout functionality using JWT tokens.
+- **Real-time Messaging:** Instant one-to-one messaging using **Socket.io** for real-time communication.
+- **User Status:** Show online/offline status of users in real-time. Offline users can be hidden via settings.
+- **Profile Page:** Each user has a personalized profile page with the option to update details.
+- **Image Sharing:** Send and receive images in chat.
+- **Responsive UI:** A mobile-friendly and desktop-responsive interface.
+- **Theme Selection:** Users can select between different themes (light/dark mode) for a customized experience.
+- **Protected Routes:** Secure routes with authentication middleware using JWT.
+- **MongoDB Integration:** Persistent user and chat storage, ensuring data is stored reliably.
+- **Send Text & Media:** Users can send both text and media messages in chat.
+- **Profile Customization:** Option for users to customize their profile.
+- **Logout:** Logout functionality for secure session management.
+- **React Context API:** Global state management for storing user info and chat data.
+- **Mobile & Desktop Support:** Fully responsive interface for mobile and desktop users.
 
 
 ## Installation & Getting started
