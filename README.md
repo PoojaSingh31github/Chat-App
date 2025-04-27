@@ -218,7 +218,7 @@ npm run dev
 ### Frontend:
 - **Vite**
 - **Context-API**
-- **Xyflow library**
+- **socket.io library**
 - **CSS / Tailwind CSS** (for styling)
 
 ### Backend:
