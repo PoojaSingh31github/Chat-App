@@ -30,53 +30,69 @@ Backend: [link](https://chat-ha97.onrender.com)
 ## Directory Structure
 - frontend
 ```
-src/
-├── assets/
-├── components/
-│ ├── ChatWindow/
-│ ├── ContactList/
-│ ├── Login/
-│ ├── Navbar/
-│ ├── Signup/
-├── pages/
-│ ├── Home.jsx
-│ ├── ChatRoom.jsx
-├── context/
-│ ├── AuthContext.jsx
-├── utils/
-│ ├── api.js
-├── App.jsx
-├── main.jsx
-├── index.css
-├── App.css
-.env
-.gitignore
-package.json
-vite.config.js
+frontend/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── skeletons/
+│   │   │   ├── AuthImagePattern.jsx
+│   │   ├── ChatContainer.jsx
+│   │   ├── ChatHeader.jsx
+│   │   ├── MessageInput.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── NoChatSelected.jsx
+│   │   ├── Sidebar.jsx
+│   ├── constants/
+│   ├── lib/
+│   │   ├── axios.js
+│   │   ├── utils.js
+│   ├── pages/
+│   │   ├── HomePage.jsx
+│   │   ├── LoginPage.jsx
+│   │   ├── ProfilePage.jsx
+│   │   ├── SettingsPage.jsx
+│   │   ├── SignUpPage.jsx
+│   ├── store/
+│   │   ├── useAuthStore.js
+│   │   ├── useChatStore.js
+│   │   ├── useThemeStore.js
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+├── .editorconfig
 ```
 
 - backend
 ```
-src/
-├── config/
-│ ├── db.js
-├── controllers/
-│ ├── authController.js
-│ ├── chatController.js
-├── middleware/
-│ ├── authMiddleware.js
-├── models/
-│ ├── User.js
-│ ├── Message.js
-├── routes/
-│ ├── authRoutes.js
-│ ├── chatRoutes.js
-├── utils/
-│ ├── generateToken.js
-server.js
-.env
-.gitignore
-package.json
+backend/
+├── src/
+│   ├── config/
+│   │   ├── db.js
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── chatController.js
+│   ├── middleware/
+│   │   ├── authMiddleware.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Message.js
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   ├── chatRoutes.js
+│   ├── utils/
+│   │   ├── generateToken.js
+│   ├── server.js
+├── .env
+├── .gitignore
+├── package.json
 
 ```
 
@@ -102,8 +118,17 @@ Detailed instructions on how to install, configure, and get the project running.
 
 ```bash
 git clone https://github.com/PoojaSingh31github/Chat-App.git
+
+BACKEND
+cd backend
+npm install
+npm run start/dev
+
+FRONTEND
+cd frontend
 npm install
 npm run dev
+
 ```
 
 ## Screenshots
@@ -146,17 +171,29 @@ npm run dev
 - **POST** `/api/auth/login`  
   ➔ Login with email and password.
 
+- **POST** `/api/auth/logout`  
+  ➔ Logout the authenticated user.
+
+- **PUT** `/api/auth/update-profile`  
+  ➔ Update authenticated user's profile (Protected Route).
+
+- **GET** `/api/auth/check`  
+  ➔ Check if user is authenticated (Protected Route).
+
 - **GET** `/api/auth/profile`  
   ➔ Get authenticated user's profile (Protected Route).
 
 ---
 
 ## Chat Routes
+- **GET** `/api/chat/users`  
+  ➔ Get users for sidebar (Protected Route).
+
 - **POST** `/api/chat/send/:receiverId`  
-  ➔ Send a message to another user.
+  ➔ Send a message to another user (Protected Route).
 
 - **GET** `/api/chat/messages/:receiverId`  
-  ➔ Get all chat messages between the authenticated user and another user.
+  ➔ Get all chat messages between the authenticated user and another user (Protected Route).
 
 ---
 
