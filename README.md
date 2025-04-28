@@ -224,6 +224,7 @@ npm run dev
 ### Backend:
 - **Node.js**
 - **Express.js**
+- **Coundinary**
 - **MongoDB** (for data storage)
 ---
 
